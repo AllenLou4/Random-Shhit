@@ -15,7 +15,7 @@
         </div>
         <div class="buttons">
             <button class="btn" id="yesButton" onclick="nextPage()">BIG YES</button>
-            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()">No</button>
         </div>
     </div>
 
@@ -26,14 +26,13 @@
 
         function moveButton() {
             let button = document.getElementById('noButton');
-            let maxWidth = window.innerWidth - button.offsetWidth - 20; 
-            let maxHeight = window.innerHeight - button.offsetHeight - 20; 
-            
-            let x = Math.random() * maxWidth;
-            let y = Math.random() * maxHeight;
+            let maxX = window.innerWidth - button.offsetWidth - 20;
+            let maxY = window.innerHeight - button.offsetHeight - 20;
 
-            button.style.left = `${x}px`;
-            button.style.top = `${y}px`;
+            let x = Math.max(10, Math.random() * maxX);
+            let y = Math.max(10, Math.random() * maxY);
+
+            button.style.transform = `translate(${x}px, ${y}px)`;
         }
     </script>
 </body> 
